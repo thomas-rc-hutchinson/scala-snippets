@@ -1,5 +1,8 @@
 package com.trch.lambdas
 
+/**
+ * Created by thomas hutchinson on 4/6/15.
+ */
 object LambdaApp extends App {
 
   val square = (x:Int) => x * x

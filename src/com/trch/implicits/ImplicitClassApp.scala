@@ -1,5 +1,8 @@
-package com.trch.lambdas
+package com.trch.implicits
 
+/**
+ * Created by thomas hutchinson on 4/6/15.
+ */
 object ImplicitClassApp extends App {
 
   implicit class FunctionMathmatics[T](val function: Function1[T,T]) {
@@ -12,8 +15,8 @@ object ImplicitClassApp extends App {
       *(amount, x => x)
     }
     
-    def +[S](that : T => S) = (x:T) => that(function(x))  
-    
+    def +[S](that : T => S) = (x:T) => that(function(x))
+
     private def union[T](func1 : T => T, func2 : T => T) : Function1[T,T] = (x:T) => func1(func2(x))
     
   }
@@ -28,7 +31,7 @@ object ImplicitClassApp extends App {
   println(add100As("Hol"))
   
   //make a pipeline of tasks
-  val pipeline = ((x : Int) => x + 100) + ((x : Int) => "the number is " + x)
+  val pipeline = ((x : Int) => x + 100) +  ((x : Int) => "the number is " + x)
   println(pipeline(100))
   
   

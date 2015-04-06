@@ -3,3 +3,6 @@
 bin
 .classpath
 .project
+.idea/
+out/
+scala-snippets.iml
