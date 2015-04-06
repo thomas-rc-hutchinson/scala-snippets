@@ -6,7 +6,7 @@ package com.trch.closure
 object ClosureApp extends App {
 
   def ifTrueElse[T](condition : Boolean, trueFunc : => T, falseFunc : => T) = if(condition) trueFunc else falseFunc
-  
+
 
   lazy val millis = System.currentTimeMillis()
 
