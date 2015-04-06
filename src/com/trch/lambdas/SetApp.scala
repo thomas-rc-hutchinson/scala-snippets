@@ -28,7 +28,7 @@ object SetApp extends App {
   val excludeMinusOneFilter = filter(one, x => x != 0)
   assert(excludeMinusOneFilter(-1) == false)
 
-  val set = createSet(-1000,1000)          
+  val set = createSet(-1000,1000)
   assert(forall(set, x => x == -100) == false)
   assert(exists(set, x => x == -100))
 
