@@ -9,7 +9,7 @@ object LambdaApp extends App {
   println(increment(6))//7
   
   val composition = union(square, increment)
-  println(composition)//49
+  println(composition(6))//49
   
   //type inference, don't need to declare type of x
   println(union(x => x + 100, x => x + 200)(0))//300
