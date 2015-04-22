@@ -45,11 +45,6 @@ object SetApp extends App {
 
 
 
-
-
-
-
-
   def contains(s: Set, elem: Int): Boolean = s(elem)
   def singletonSet(elem: Int): Set = (x: Int) => x == elem
   def emptySet(): Set = (x: Int) => false
