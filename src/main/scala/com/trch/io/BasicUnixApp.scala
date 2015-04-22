@@ -12,12 +12,12 @@ object BasicUnixApp extends App {
 
   val grep : ProcessBuilder = Seq("grep", "grep", thisSource)
 
-  grep.lines.foreach(result => println(s"We just got grepped : $result"))
+  grep.lineStream.foreach(result => println(s"We just got grepped : $result"))
 
   val curl : ProcessBuilder = Seq("curl", "http://www.google.com")
-  curl.lines.foreach(println(_))
+  curl.lineStream.foreach(println(_))
 
   val tail : ProcessBuilder = Seq("tail", thisSource)
-  tail.lines.foreach(println(_))
+  tail.lineStream.foreach(println(_))
 
 }
