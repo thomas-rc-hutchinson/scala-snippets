@@ -7,13 +7,14 @@ package com.trch.regex
 
 class EmailRegexApp {
 
-  val Email = """(\w+)@([\w\.]+)""".r
+  val EmailAddress = """(\w+)@([\w\.]+)""".r
 
-  def isEmailAddress(address: String): Boolean = address match {
-    case Email(_, _) => true
-    case _           => false
+  def parse(address: String): (String,String) = address match {
+    case EmailAddress(name, domain) => (name, domain)
   }
 
-  isEmailAddress("foo@foo.com")
+  val name,host = parse("foo@foo.com")
+  println(name)
+  println(host)
 
 }

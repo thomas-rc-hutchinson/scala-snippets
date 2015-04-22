@@ -45,7 +45,12 @@ object ImplicitClassApp extends App with FunctionImplicits {
 
   //make a pipeline of tasks
   val pipeline = ((x : Int) => System.currentTimeMillis() - x) + ((x : Long) => x.toHexString) + ((x : String) => "result => " + x)
+  
+  //see the power of type inference, we don't need to declare parameters types in the lambdas after the first
+  val pipeline2 = ((x : Int) => System.currentTimeMillis() - x) + (x => x.toHexString) + (x => "result => " + x)
+  
   println(pipeline(1))
+  println(pipeline2(1))
 
 
   
