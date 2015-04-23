@@ -35,7 +35,7 @@ object JMXMetricsToMongoApp extends App{
      db.insert(mongoDBObjects : _*)
   }
 
-  val hosts = List("10.1.28.36:7214", "10.211.146.23:7214")
+  val hosts = List() //host:port e.g. 127.0.0.1:8080
   val mongo = MongoClient("localhost", 27017)
   val db = mongo("snippets")("hosts")
 
